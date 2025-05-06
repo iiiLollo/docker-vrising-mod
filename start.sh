@@ -92,6 +92,9 @@ cd "$s" || {
 
 echo "Cleaning  up old mods (if any)"
 #rm -rf BepInEx
+rm -rf BepInEx/plugins
+rm -rf BepInEx/Plugins
+rm -rf BepInEx/config
 rm -rf dotnet
 rm -f doorstop_config.ini
 rm -f winhttp.dll
@@ -100,7 +103,7 @@ chown -R vrising:vrising BepInEx/*
 
 if [ "${ENABLE_MODS}" = 1 ]; then
     echo "Setting up mods"
-    cp -r  "$m/BepInEx"             "$s/BepInEx"
+    cp -r  "$m/BepInEx"             "$s/"
     cp -r  "$m/dotnet"              "$s/dotnet"
     cp     "$m/doorstop_config.ini" "$s/doorstop_config.ini"
     cp     "$m/winhttp.dll"         "$s/winhttp.dll"
