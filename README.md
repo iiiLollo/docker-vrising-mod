@@ -44,8 +44,10 @@
 | WORLDNAME  | optional worldname     | default = world1. No real need to alter this. saves will be in a subdir WORLDNAME |
 | GAMEPORT   | optional game udp port | to overrule Port in ServerHostSettings.json config                                |
 | QUERYPORT  | optional query port    | to overrule QueryPort in ServerHostSettings.json config                           |
+| ENABLE_MODS  | optional to enable mods    | If set to 1 enable mods in the server                           |
 | LOGDAYS | optional lifetime of logfiles | overrule default of 30 days |
 
+	
 ## Ports
 
 
@@ -61,6 +63,7 @@
 | -------------------- | ----------------------------- | ----------------------------------------- |
 | steam install path | /mnt/vrising/server         | path to hold the dedicated server files |
 | world              | /mnt/vrising/persistentdata | path that holds the world files         |
+| world              | /mnt/vrising/mods | path that holds the BepInEx folder, dotnet folder,  doorstop_config.ini and winhttp.dll |
 
 ## Docker cli
 
@@ -72,6 +75,8 @@ docker run -d --name='vrising' \
 -e SERVERNAME="trueosiris-V" \
 -v '/path/on/host/server':'/mnt/vrising/server':'rw' \
 -v '/path/on/host/persistentdata':'/mnt/vrising/persistentdata':'rw' \
+-v '/path/on/host/mods':'/mnt/vrising/mods':'rw' \
+
 -p 9876:9876/udp \
 -p 9877:9877/udp \
 'trueosiris/vrising'
@@ -82,7 +87,7 @@ docker run -d --name='vrising' \
 ```yaml
 services:
   vrising:
-    image: trueosiris/vrising
+    image: !!Your locally create image from this repo!!
     environment:
       - TZ=Europe/Paris
       - SERVERNAME=vrising-TrueOsiris
