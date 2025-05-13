@@ -63,7 +63,7 @@
 | -------------------- | ----------------------------- | ----------------------------------------- |
 | steam install path | /mnt/vrising/server         | path to hold the dedicated server files |
 | world              | /mnt/vrising/persistentdata | path that holds the world files         |
-| world              | /mnt/vrising/mods | path that holds the BepInEx folder, dotnet folder,  doorstop_config.ini and winhttp.dll |
+| mods folder        | /mnt/vrising/mods | path that holds the BepInEx folder, dotnet folder,  doorstop_config.ini and winhttp.dll |
 
 ## Docker cli
 
